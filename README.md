@@ -21,7 +21,7 @@ Perceptron Multicamadas (PMC ou MLP — Multi Layer Perceptron) é uma rede neur
 
 Para treinar a rede MLP, o algoritmo comumente utilizado é o de retropropagação (Backpropagation) seu arquitetura comforme a representação abaixo:
 
-![System Architecture](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/cloud.jpg)
+![System Architecture](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/MLP.png)
 
 
 É uma aplicação de técnicas de aprendizado de máquina para resolver um problema de classificação de imagens. O conjunto de dados Fashion MNIST consiste em 60.000 imagens de 10 categorias diferentes de roupas, com 6.000 imagens por categoria. Cada imagem é uma representação em escala de cinza de 28x28 pixels.
