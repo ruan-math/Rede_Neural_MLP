@@ -147,18 +147,57 @@ Test loss: 0.4102402329444885
 Test accuracy: 85.26 %
 Test error: 14.74 %
 
-# Modelo de Predição 
+####Dica: Aumentar o número de camadas e neurônios nem sempre é a melhor solução para uma melhoria de performance/acurácia.
+
+Na verdade uma das limitações da rede MLP é que ao se aumentar muito o número de camadas e neurônios ela tende a ficar com um número de parâmetros muito grande e com isso tão pesada ao ponto do hardware não conseguir processar e ela não convergir (chegar a um resultado), talvez por essa razão, até a evolução do hardware ela tenha ficado um pouco estagnada.
+
+# Agora Testamos com o Modelo de Predição 
 
 O código fornecido realiza a predição de roupas do conjunto de dados Fashion MNIST utilizando um modelo de rede neural treinado previamente.
 
+``````
+# PREDIÇÃO 
+import os
+import tensorflow.keras as keras
+from keras.datasets import fashion_mnist
+from keras.models import load_model
+from keras.utils import to_categorical
+import numpy as np; import sys; import os; from time import time
 
+(_,_), (QX, QY) = fashion_mnist.load_data()
+QX=255-QX
+nclasses = 10
+QY2 = keras.utils.to_categorical(QY, nclasses)
+nl, nc = QX.shape[1], QX.shape[2] #28, 28
+QX = QX.astype('float32') / 255.0 # 0 a 1
+model=load_model('MLP4.h5')
+score = model.evaluate(QX, QY2, verbose=False)
+print('Test loss: %.4f'%(score[0]))
+print('Test accuracy: %.2f %%'%(100*score[1]))
+print('Test error: %.2f %%'%(100*(1-score[1])))
 
+categorias=["Camiseta", "Calça", "Pulôver", "Vestido", "Casaco", "Sandália",
+ "Camiseta", "Tênis", "Bolsa", "Botins"]
 
+QP_test= model.predict(QX[:20,:,:])
+QP_predict = np.argmax(QP_test, axis=-1)
 
+f= plt.figure(figsize=(15, 10))
+for i in range(20):
+ f.add_subplot(4,5,i+1)
+ plt.imshow( QX[i,:,:], cmap="gray")
+ plt.axis("off");
+ plt.text(0,-3,categorias[QY[i]],color="b")
+ plt.text(0, 2,categorias[QP_predict[i]],color="r")
+plt.savefig("img.png")
+plt.show()
 
+``````
+Test loss: 0.4102
+Test accuracy: 85.26 %
+Test error: 14.74 %
+1/1 [==============================] - 0s 72ms/step
 
+![System Architecture](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/Modelo%20Preditor.png)
 
-Dica: Aumentar o número de camadas e neurônios nem sempre é a melhor solução para uma melhoria de performance/acurácia.
-
-Na verdade uma das limitações da rede MLP é que ao se aumentar muito o número de camadas e neurônios ela tende a ficar com um número de parâmetros muito grande e com isso tão pesada ao ponto do hardware não conseguir processar e ela não convergir (chegar a um resultado), talvez por essa razão, até a evolução do hardware ela tenha ficado um pouco estagnada.
 
