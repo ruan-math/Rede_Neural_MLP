@@ -6,6 +6,8 @@
 
 ## Rede_Neural_MLP
 
+[Link do Relatório Final ](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/Trabalho%20final.pdf)
+
 ### Explorando o Poder da Computação em Nuvem para o Aprendizado de máquina usando uma rede neural  MLP (Multi Layer Perceptron) para classificação de objetos em imagens Reais
 
 Repositório do Código em Python de Aprendizado de Maquina Usando uma Rede Neural MLP (Multi Layer Perceptron) para 
