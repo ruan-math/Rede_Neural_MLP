@@ -26,7 +26,7 @@ Para treinar a rede MLP, o algoritmo comumente utilizado é o de retropropagaç�
 
 É uma aplicação de técnicas de aprendizado de máquina para resolver um problema de classificação de imagens. O conjunto de dados Fashion MNIST consiste em 60.000 imagens de 10 categorias diferentes de roupas, com 6.000 imagens por categoria. Cada imagem é uma representação em escala de cinza de 28x28 pixels.
 
-# Implementação da Rede Neural MLP
+## Implementação da Rede Neural MLP
 ``````
 import os
 import tensorflow.keras as keras
@@ -40,7 +40,7 @@ import numpy as np
 import sys
 ``````
 
-# Carregamento dos dados
+## Carregamento dos dados
 ``````
 (AX, AY), (QX, QY) = fashion_mnist.load_data()
 AX = 255 - AX
@@ -55,7 +55,7 @@ AX = AX.astype('float32') / 255.0  # 0 a 1
 QX = QX.astype('float32') / 255.0  # 0 a 1
 ``````
 
-# Definição do modelo
+## Definição do modelo
 ``````
 model = Sequential()
 model.add(Flatten(input_shape=(nl, nc)))
@@ -68,12 +68,12 @@ model.add(Dense(32, activation='relu'))
 model.add(Dense(nclasses, activation='softmax'))
 ``````
 
-# Resumo do modelo
+## Resumo do modelo
 ``````
 model.summary()
 ``````
 
-# Compilação do modelo
+## Compilação do modelo
 ``````
 opt = optimizers.Adam()
 model.compile(optimizer=opt,
@@ -81,7 +81,7 @@ model.compile(optimizer=opt,
               metrics=['accuracy'])
 ``````
 
-# Treinamento do modelo com registro de métricas
+## Treinamento do modelo com registro de métricas
 ``````
 history = model.fit(AX, AY2,
                     batch_size=100,
@@ -90,12 +90,12 @@ history = model.fit(AX, AY2,
                     validation_data=(QX, QY2))
 ``````
 
-# Plotagem dos gráficos
+## Plotagem dos gráficos
 ``````
 plt.figure(figsize=(12, 4))
 ``````
 
-# Gráfico da perda
+## Gráfico da perda
 ``````
 plt.subplot(1, 3, 1)
 plt.plot(history.history['loss'], label='Train Loss')
@@ -105,7 +105,7 @@ plt.ylabel('Loss')
 plt.legend()
 ``````
 
-# Gráfico da acurácia
+## Gráfico da acurácia
 ``````
 plt.subplot(1, 3, 2)
 plt.plot(history.history['accuracy'], label='Train Accuracy')
@@ -115,7 +115,7 @@ plt.ylabel('Accuracy')
 plt.legend()
 ``````
 
-# Gráfico do erro
+## Gráfico do erro
 ``````
 plt.subplot(1, 3, 3)
 plt.plot(history.history['accuracy'], label='Train Error')
@@ -128,7 +128,7 @@ plt.tight_layout()
 plt.show()
 ``````
 
-# Avaliação final do modelo
+## Avaliação final do modelo
 ``````
 score = model.evaluate(QX, QY2, verbose=False)
 print('Test loss:', score[0])
@@ -136,11 +136,16 @@ print('Test accuracy: %.2f %%' % (100 * score[1]))
 print('Test error: %.2f %%' % (100 * (1 - score[1])))
 ``````
 
-# Salvando o modelo treinado
+## Salvando o modelo treinado
 
 ``````
 model.save('MLP4.h5')
 ``````
+![System Architecture](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/Resultado%20Treinamento.png)
+
+Test loss: 0.4102402329444885
+Test accuracy: 85.26 %
+Test error: 14.74 %
 
 
 
