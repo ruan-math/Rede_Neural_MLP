@@ -2,7 +2,7 @@
 
 ![Badge development](http://img.shields.io/static/v1?label=states&message=%20Full&color=blue&style=for-the-badge)
 
-
+![System Architecture](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/cloud.jpg)
 ## Rede_Neural_MLP
 Repositório do Código em Python de Aprendizado de Maquina Usando uma Rede Neural MLP (Multi Layer Perceptron) para 
 classificação de objetos em imagens.
