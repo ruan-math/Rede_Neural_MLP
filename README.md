@@ -26,7 +26,7 @@ Para treinar a rede MLP, o algoritmo comumente utilizado é o de retropropagaç�
 
 É uma aplicação de técnicas de aprendizado de máquina para resolver um problema de classificação de imagens. O conjunto de dados Fashion MNIST consiste em 60.000 imagens de 10 categorias diferentes de roupas, com 6.000 imagens por categoria. Cada imagem é uma representação em escala de cinza de 28x28 pixels.
 
-## Implementação da Rede Neural MLP
+##  Rede Neural MLP
 ``````
 import os
 import tensorflow.keras as keras
@@ -146,6 +146,10 @@ model.save('MLP4.h5')
 Test loss: 0.4102402329444885
 Test accuracy: 85.26 %
 Test error: 14.74 %
+
+# Modelo de Predição 
+
+O código fornecido realiza a predição de roupas do conjunto de dados Fashion MNIST utilizando um modelo de rede neural treinado previamente.
 
 
 
