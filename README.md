@@ -115,27 +115,11 @@ print('Test accuracy: %.2f %%' % (100 * score[1]))
 print('Test error: %.2f %%' % (100 * (1 - score[1])))
 
 # Salvando o modelo treinado
+
+``````
 model.save('MLP4.h5')
 
-
 ``````
-{ 
-	"device":
-		{
-			"Type": "outlet",
-			"Patch": "/users/measures",
-			"Id/MAC": "000e2ef48448",
-			"Data": "[voltage,current, active_power, reactive_power, power_factor, aparent_power]",
-			"Protocol": "Wisun-han",
-		
-		}
-
-}
-``````
-
-
-
-
 
 
 
