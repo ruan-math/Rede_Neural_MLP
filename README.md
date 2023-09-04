@@ -1,5 +1,8 @@
 # PSI5120 - Tópicos em Computação em Nuvem (2023)
 
+[Link da Disciplina](https://edisciplinas.usp.br/course/view.php?id=110396)
+
+
 ![Badge development](http://img.shields.io/static/v1?label=states&message=%20Full&color=blue&style=for-the-badge)
 
 ![System Architecture](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/cloud.jpg)
