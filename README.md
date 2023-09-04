@@ -17,6 +17,8 @@ classificação de objetos em imagens.
 
 # Implementação do Codigo de Treinameto da Rede MLP.
 
+[Link do Código no formato .ipynb ](https://github.com/ruan-math/Rede_Neural_MLP/blob/main/Treinamento__Rede_Neural_MLP.ipynb)
+
 Perceptron Multicamadas (PMC ou MLP — Multi Layer Perceptron) é uma rede neural com uma ou mais camadas ocultas com um número indeterminado de neurônios. A camada oculta possui esse nome porque não é possível prever a saída desejada nas camadas intermediárias.
 
 Para treinar a rede MLP, o algoritmo comumente utilizado é o de retropropagação (Backpropagation) seu arquitetura comforme a representação abaixo:
