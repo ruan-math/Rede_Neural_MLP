@@ -38,10 +38,10 @@ from keras import optimizers
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
-``````
 
-## Carregamento dos dados
-``````
+
+# Carregamento dos dados
+
 (AX, AY), (QX, QY) = fashion_mnist.load_data()
 AX = 255 - AX
 QX = 255 - QX
@@ -147,7 +147,7 @@ Test loss: 0.4102402329444885
 Test accuracy: 85.26 %
 Test error: 14.74 %
 
-#### Dica: Aumentar o número de camadas e neurônios nem sempre é a melhor solução para uma melhoria de performance/acurácia.
+Dica: Aumentar o número de camadas e neurônios nem sempre é a melhor solução para uma melhoria de performance/acurácia.
 
 Na verdade uma das limitações da rede MLP é que ao se aumentar muito o número de camadas e neurônios ela tende a ficar com um número de parâmetros muito grande e com isso tão pesada ao ponto do hardware não conseguir processar e ela não convergir (chegar a um resultado), talvez por essa razão, até a evolução do hardware ela tenha ficado um pouco estagnada.
 
